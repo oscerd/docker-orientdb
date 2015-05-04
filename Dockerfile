@@ -12,6 +12,7 @@ COPY . /src
 
 RUN apt-get update && apt-get install -y curl unzip
 
+ENV ORIENTDB_ROOT_PASSWORD root
 ENV ORIENT_URL http://www.orientdb.com/download.php?file=${ORIENTDB_VERSION}.tar.gz
 RUN wget ${ORIENT_URL} -O ${ORIENTDB_VERSION}.tar.gz
 RUN mkdir /opt/orientdb
